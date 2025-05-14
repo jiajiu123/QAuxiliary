@@ -184,7 +184,7 @@ object SendPangu : CommonSwitchFunctionHook("sendMsgPangu", arrayOf(AIOTextEleme
                     requireMinQQVersion(QQVersion.QQ_9_0_56) -> "e"
                     else -> "a"
                 }
-                val content = it.args[0].get(inputStrFieldName) as String
+                val content = it.args[0].get(inputStrFieldName) as Integer
                 if (!content.startsWith("，，") && !content.startsWith(",,"))
                     it.args[0].set(inputStrFieldName, processPangu(content))
                 else
